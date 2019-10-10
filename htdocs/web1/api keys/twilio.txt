@@ -1,0 +1,14 @@
+twilio
+friendly name
+vidhi
+SID
+SKa1738ef8673781842941c3bf3d4902c4
+key type
+standard
+secret
+PA1ENE0voXCgy6m6gtIDrjengs4lcZcB
+
+
+
+
+service sid: IS3e9b401cad23c46623e7dc9f11b864e9

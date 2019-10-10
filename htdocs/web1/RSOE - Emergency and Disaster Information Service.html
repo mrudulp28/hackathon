@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://hisz.rsoe.hu/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="description" content="The Hungarian National Association of Radio Distress-Signalling and Infocommunications (RSOE) operates Emergency and Disaster Information Service (EDIS) within the frame of its own website which has the objective to monitor and document all the events on the Earth which may cause disaster or emergency.">
+    <title>RSOE - Emergency and Disaster Information Service</title> 
+    <script src = "https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>   
+    <link async="" href="./RSOE - Emergency and Disaster Information Service_files/bootstrap.min.css" rel="stylesheet">
+    <link async="" href="./RSOE - Emergency and Disaster Information Service_files/landing-page.css" rel="stylesheet">
+    <link async="" href="./RSOE - Emergency and Disaster Information Service_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <meta name="google-site-verification" content="KYP4Y_wAGxQtRxXuKzF5IrNjKI9p7lwWGTEQh3fd1oc">
+    <link async="" href="./RSOE - Emergency and Disaster Information Service_files/font-awesome.css" rel="stylesheet">    
+    <link async="" href="./RSOE - Emergency and Disaster Information Service_files/css" rel="stylesheet" type="text/css">
+    <meta name="google-site-verification" content="KYP4Y_wAGxQtRxXuKzF5IrNjKI9p7lwWGTEQh3fd1oc">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       
+    <style type="text/css">
+        .intro-header{
+            background: url(http://th08.deviantart.net/fs46/PRE/i/2009/181/d/6/World_map_wallpaper_by_gio0989.jpg);
+        }
+        #id01 {font-family: Arial, Helvetica, sans-serif;}
+        #id01 {box-sizing: border-box;}
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+          width: 70%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+
+        /* Add a background color when the inputs get focus */
+        input[type=text]:focus, input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+
+        /* Set a style for all buttons */
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 7px 10px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+        }
+
+        button:hover {
+          opacity:1;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          padding: 14px 20px;
+          background-color: #f44336;
+        }
+
+        /* Float cancel and signup buttons and add an equal width */
+        .cancelbtn, .signupbtn {
+          float: left;
+          width: 25%;
+        }
+
+        /* Add padding to container elements */
+        .container {
+          padding: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: #474e5d;
+          padding-top: 50px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Style the horizontal ruler */
+        hr {
+          border: 1px solid #f1f1f1;
+          margin-bottom: 25px;
+        }
+         
+        /* The Close Button (x) */
+        .close {
+          position: absolute;
+          right: 35px;
+          top: 15px;
+          font-size: 40px;
+          font-weight: bold;
+          color: #f1f1f1;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #f44336;
+          cursor: pointer;
+        }
+
+        /* Clear floats */
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        hr{
+            width:80%;
+        }
+        /* Change styles for cancel button and signup button on extra small screens */
+        @media screen and (max-width: 300px) {
+          .cancelbtn, .signupbtn {
+             width: 100%;
+          }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://hisz.rsoe.hu/">Natural calamity Alert</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li><!-- 
+                            <a href="index.php">Contact</a> -->
+                            <a href="https://twitter.com/intent/tweet?button_hashtag=floods&ref_src=twsrc%5Etfw">Tweet #floods</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </li>
+                        <li>
+                          <a href="index.php">Donate</a>
+                        </li>
+                        <li>
+                            <a><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+                            </a>
+                        </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            
+        </div>
+
+        <!-- /.container -->
+    </nav>
+
+    <div id="id01" class="modal">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <form class="modal-content" action="/action_page.php">
+
+                <div class="container">
+                  <h1>Sign Up</h1>
+                  <p>Please fill in this form to create an account.</p>
+                  <hr>
+                  <label for="email"><b>Email</b></label>
+                  <br>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+                  <br>
+                  <label for="psw"><b>Password</b></label>
+                  <br>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <br>
+                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                  <br>
+                  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                  <br>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                  </label>
+                  <br>
+                  <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                  <br>
+                  <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+    <!-- Header -->
+    <div class="intro-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Emergency and Disaster Information Service</h1>
+                        <h2>We watch, we analyze, we notify</h2>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#twitter" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="maps.html" class="btn btn-default btn-lg"><i class="fa icon-globe fa-fw"></i> <span class="network-name">AlertMap</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/RsoeEdis" class="btn btn-default btn-lg"><i class="fa icon-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    
+                    <!-- <div class="clearfix"></div>
+                    <h2 class="section-heading">Who we are?</h2>
+                    <p class="lead">
+                    The Hungarian National Association of Radio Distress-Signalling and Infocommunications (RSOE) operates Emergency and Disaster Information Service (EDIS) within the frame of its own website which has the objective to monitor and document all the events on the Earth which may cause disaster or emergency. Our service is using the speed and the data spectrum of the internet to gather information. We are monitoring and processing several foreign organisation’s data to get quick and certified information.                    
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-9"><br><br><br>
+                    <img class="img-responsive" src="./RSOE - Emergency and Disaster Information Service_files/emergency-and-disaster-info-service.jpg" alt="">
+                </div> -->
+                <!-- <div class="container" id="twitter">
+                    <h2>Carousel Example</h2>  
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        Wrapper for slides
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <p class="dynamic">abhi ke liye ye dekhlo</p>
+                          </div>
+
+                          <div class="item">
+                            <p class="dynamic">abhi ke liye ye dekhlo</p>
+                          </div>
+                        
+                          <div class="item">
+                            <p class="dynamic">abhi ke liye ye dekhlo</p>
+                          </div>
+                        </div>
+ -->
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container" id="about">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">What we do?</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p></p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+    
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Rapid Information Services</h2>
+                    <p class="lead">The EDIS client developed by RSOE works closely with the online EDIS website. From now on, new events appear not only on the EDIS website but also in the RSOE EDIS Notifier smartphone application. Using PUSH technology, the application gives you real time information about the events of the world.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6"><br><br><br><br><br>
+                    <a href="http://bit.ly/ZZkXLQ"><img class="img-responsive" src="./RSOE - Emergency and Disaster Information Service_files/Google-Play.png" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect to Start to the EDIS:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/RSOE_EDIS" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="http://hisz.rsoe.hu/index2.php" class="btn btn-default btn-lg"><i class="fa icon-globe fa-fw"></i> <span class="network-name">AlertMap</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/RsoeEdis" class="btn btn-default btn-lg"><i class="fa icon-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+                
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="http://hisz.rsoe.hu/">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">⋅</li>
+                        <li>
+                            <a href="http://hisz.rsoe.hu/alertmap/database/?pageid=about_us">About</a>
+                        </li>
+                        <li class="footer-menu-divider">⋅</li>
+                        <li>
+                            <a href="http://hisz.rsoe.hu/alertmap/database/?pageid=about_contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright © RSOE EDIS 2004 - 2019. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script> -->
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAatL4kj2HA2J19qmTkEKa8zgu3YhFTU80",
+            authDomain: "natural-calamities-a2758.firebaseapp.com",
+            databaseURL: "https://natural-calamities-a2758.firebaseio.com",
+            projectId: "natural-calamities-a2758",
+            storageBucket: "gs://natural-calamities-a2758.appspot.com/",
+            messagingSenderId: "425909425478",
+            appId: "1:425909425478:web:fadf806c60a9284c884147"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // Get a reference to the storage service, which is used to create references in your storage bucket
+        // var databaseURL = firebase.databaseURL('');
+        database = firebase.database();
+        var ref = database.ref('user');
+        ref.on('value', gotData, errData);
+
+        function gotData(data){
+          console.log(data.val());
+        }
+        function errData(err){
+          console.log('error');
+          console.log(err);
+        }
+        </script>
+        
+        <script>
+            if('geolocation' in navigator)
+            {
+              console.log("yes");
+              navigator.geolocation.getCurrentPosition(position => 
+              {
+                document.getElementById("latitude").innerHTML = position.coords.latitude;
+                document.getElementById("longitude").innerHTML = position.coords.longitude;
+                console.log(position);
+            });
+            }
+            else
+            {
+              console.log("no");
+            }
+
+        </script>
+        <!-- <script src="index.js"></script>-->
+    <script src="./RSOE - Emergency and Disaster Information Service_files/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./RSOE - Emergency and Disaster Information Service_files/bootstrap.min.js.download"></script>
+    <script src="./RSOE - Emergency and Disaster Information Service_files/ie10-viewport-bug-workaround.js.download"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
+
+
+</body></html>
